@@ -43,7 +43,7 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests((authorize) ->
                         authorize.requestMatchers(HttpMethod.GET, "/auth/**").permitAll()
                                 .requestMatchers("/auth/login").permitAll()
-                                .requestMatchers("/generateOtp").permitAll()
+                                .requestMatchers("/**").permitAll()
                                 .requestMatchers("/users").permitAll()
                                 .anyRequest().authenticated())
                .exceptionHandling(exception->exception.authenticationEntryPoint(authenticationEntryPoint))
